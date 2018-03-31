@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Get Fishing</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+</head>
+<body style = "background: url(/images/fish_water.jpg); background-size: 100%;">
+<form id="SelectionSection">
+    <h3>Copyright © 2018 Joan Adams. All Rights Reserved.
+        <p>Expert Angling Contributor: Larry Sullivan (retired Navy)</p>
+    </h3>
+    <!--page heading and fishing image-->
+    <p></p><p></p><p></p><p></p>
+    <h1>Get Fishing</h1>
+    <!--<div class="row">-->
+        <!--<div class="col-md-1"></div>-->
+        <!--<div class="col-md-10 card imageone">-->
+            <!--<p class="caption">Fishing Picture Here</p>-->
+        <!--</div>-->
+        <!--<div class="col-md-1"></div>-->
+    <!--</div>-->
+
+    <p></p><p></p><p></p><p></p>
+
+    <!--Selection Text Boxes row and button-->
+    <h2>Choose your fishing conditions</h2>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2 card c2">
+            <p>Fish Type</p>
+        </div>
+        <div class="col-md-2 card c2">
+            <p>Season</p>
+        </div>
+        <div class="col-md-2 card c2">
+            <p>Water Temperature</p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2 card c2">
+            <select name="Fish Type" size="0" id="txtFish">
+                <option value="All">All</option>
+                <option value="Bass">Bass</option>
+                <option value="Bluegill">Bluegill</option>
+                <option value="Trout">Trout</option>
+            </select>
+        </div>
+        <div class="col-md-2 card c2">
+            <select name="Season" size="0" id="txtSeason">
+                <option value="All">All</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+                <option value="Winter">Winter</option>
+            </select>
+        </div>
+        <div class="col-md-2 card c2">
+            <select name="Water Temp" size="0" id="txtTemp">
+                <option value="All">All</option>
+                <option value="80s">80s</option>
+                <option value="70s">70s</option>
+                <option value="60s">60s</option>
+                <option value="50s">50s</option>
+                <option value="40s">40s</option>
+            </select>
+        </div>
+        <div class="col-md-2 card btnbox">
+            <button class="btn btn-primary btnstyle" id="getListBtn">Display List</button>
+        </div>
+    </div>
+
+    <!--Admin Only Fields - Used to populate database-->
+    <p></p><p></p><p></p><p></p>
+
+        <!--<div class="row">-->
+            <!--<div class="col-md-2"></div>-->
+            <!--<div class="col-md-8 card admin"><p>Admin Only - Data Entry Mode</p></div>-->
+            <!--<div class="col-md-2"></div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-2"></div>-->
+            <!--<div class="col-md-2 card admin">-->
+                <!--<select name="Clarity" size="0" id="txtClarity">-->
+                    <!--<option value="Clear">Clear</option>-->
+                    <!--<option value="Muddy">Muddy</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <!--<div class="col-md-6 card admin">-->
+                <!--<input type="text" th:width="100" id="txtLureList"/>-->
+            <!--</div>-->
+            <!--<div class="col-md-2">-->
+                <!--<button class="btn btn-warning admin" id="addBtn">ADD</button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--End of Admin Only Elements-->
+</form>
+
+    <p></p><p></p>
+    <!--<div class="row PicRow">-->
+        <!--<div class="col-md-2"></div>-->
+        <!--<div id="LurePic" class="col-md-8 defaultlure"></div>-->
+        <!--<div class="col-md-2"></div>-->
+    <!--</div>-->
+
+    <p></p><p></p><p></p><p></p>
+    <h2>Try These Lures!</h2>
+    <p></p><p></p><p></p><p></p>
+
+       <!--Lure Recommendation List Column Headings-->
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-1 c3 card box">
+            <p>Fish</p>
+        </div>
+        <div class="col-md-1 c3 card box">
+            <p>Season</p>
+        </div>
+        <div class="col-md-1 c3 card box">
+            <p>Water Temp.</p>
+        </div>
+        <div class="col-md-1 c3 card box">
+            <p>Water Clarity</p>
+        </div>
+        <div class="col-md-4 c3 card box">
+            <p>Recommended Lures</p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+     <!--Lure Recommendation List from database-->
+    <div id="container"></div>
+
+</body>
+</html>
